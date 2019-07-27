@@ -21,7 +21,7 @@ function validateName() {
 function validatePostalCode() {
   const postalCode = document.getElementById("postalCode");
 
-  const re = /^[A-Z]([0-9][A-Z]){2}[0-9]$/;
+  const re = /^[A-Z][0-9][A-Z][ ]?[0-9][A-Z][0-9]$/;
 
   if (!re.test(postalCode.value)) {
     postalCode.classList.add("is-invalid");
@@ -42,4 +42,14 @@ function validateEmail() {
   }
 }
 
-function validatePhone() {}
+function validatePhone() {
+  const phone = document.getElementById("phone");
+
+  const re = /^\(?(\+1)?[- ]?\d{3}\)?[- ]?\d{3}[- ]?\d{4}\)?$/;
+
+  if (!re.test(phone.value)) {
+    phone.classList.add("is-invalid");
+  } else {
+    phone.classList.remove("is-invalid");
+  }
+}
