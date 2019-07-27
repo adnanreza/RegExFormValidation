@@ -20,7 +20,7 @@ function validateName() {
 
 function validatePostalCode() {
   const postalCode = document.getElementById("postalCode");
-  //start with and ends with a letter and has length between 2-10
+
   const re = /^[A-Z]([0-9][A-Z]){2}[0-9]$/;
 
   if (!re.test(postalCode.value)) {
@@ -30,6 +30,16 @@ function validatePostalCode() {
   }
 }
 
-function validateEmail() {}
+function validateEmail() {
+  const email = document.getElementById("email");
+
+  const re = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]){2,5}$/;
+
+  if (!re.test(email.value)) {
+    email.classList.add("is-invalid");
+  } else {
+    email.classList.remove("is-invalid");
+  }
+}
 
 function validatePhone() {}
